@@ -1,0 +1,44 @@
+<ion-view view-title="Gerador de Lembretes">
+   <ion-content>
+      <div class="row">
+         <div class="col col-50">
+            <button class="button button-block button-balanced" ng-click="vm.adicionarTarefa()">Adicionar</button>
+         </div>
+         <div class="col col-50">
+            <button class="button button-block button-assertive" ng-click="vm.mostrarBotaoRemover()">Remover</button>
+         </div>
+      </div>
+      <ion-list show-delete="vm.removeStatus">
+         <ion-item ng-repeat="item in vm.lembretes track by $index" ng-hide="vm.esconderItemFinalizado(item)">
+            <div class="row">
+               <div class="col col-90">
+                  {{item.nome}}
+                  <ion-delete-button class="ion-minus-circled" ng-click="vm.removeTarefa(item)"></ion-delete-button>
+               </div>
+               <div class="col col-10">
+                  <button class="button button-small button-balanced button-outline"
+                     ng-click="vm.alterarValor(item)">
+                  <i class="icon ion-checkmark" ng-show="item.finalizada"></i>
+                  </button>
+               </div>
+            </div>
+         </ion-item>
+      </ion-list>
+   </ion-content>
+   <ion-footer-bar class="bar-calm">
+      <div class="row">
+         <div class="col col-80">
+            <strong>Exibir finalizadas</strong>
+         </div>
+         <div class="col col-20">
+            <label class="toggle">
+               <input type="checkbox" ng-model="vm.mostrarFinalizadas">
+               <div class="track">
+                  <div class="handle">
+                  </div>
+               </div>
+         </div>
+         </label>
+      </div>
+   </ion-footer-bar>
+</ion-view>
