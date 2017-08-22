@@ -4,7 +4,9 @@ Aplicativo com simples objetivo de testar a ferramenta Ionic para o uso dela em 
 
 ## Dependências
 npm install -g ionic cordova
+
 ionic
 - yes
 - yes
+
 ionic serve
